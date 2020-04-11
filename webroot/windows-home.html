@@ -1,0 +1,322 @@
+<html>
+
+<head>
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body style="overflow:hidden;">
+    <div class="desktop">
+        <div id="view-container">
+
+            <aside class="sidebar z-2" style="height: auto;overflow: auto;" data-role="sidebar"
+                data-toggle="#sidebar-toggle-3" id="sb3" data-shift=".file-explorer">
+                <!--a href="/" class="fg-white sub-action" onclick="Metro.sidebar.close('#sb3'); return false;">
+                    <span class="mif-arrow-left mif-2x"></span>
+                </a-->
+                <div data-role="panel" id="fDrives" data-title-caption="Disk Drives"
+                    data-title-icon="<span class='fa fa-hdd-o'></span>" data-collapsible="true">
+                    <ul class="sidebar-menu" data-role="listview" data-view="content" data-static="md"
+                        data-select-node="true" id="dexplorer">
+                    </ul>
+                </div>
+                <br>
+                <div data-role="panel" id="fDetails" data-title-caption="Details"
+                    data-title-icon="<span class='mif-info'></span>" data-collapsible="true">
+                </div>
+                <div data-role="panel" id="fAction" data-title-caption="Actions"
+                    data-title-icon="<span class='mif-info'></span>" data-collapsible="true">
+                    <input type="file" data-role="file" multiple="" id="clientfiles">
+                    <input type="button" value="upload" id="btnUpload" />
+                    <div id="uploadprogress">
+
+                    </div>
+                </div>
+            </aside>
+
+
+
+            <div data-role="charms" id="rightctrl" class="bg-gray" data-position="right">
+                <div style="width: 50px;padding:10px;">
+                    <button class="ribbon-icon-button bg-blue fg-white close-charm">
+                        <span class="icon">
+                            <span class="mif-arrow-right"></span>
+                        </span>
+                        <!--span class="caption">List</span-->
+                    </button>
+                    <hr>
+                    <button class="ribbon-icon-button bg-blue fg-white change-view" title="Table" data-view="table">
+                        <span class="icon">
+                            <span class="mif-list"></span>
+                        </span>
+                        <!--span class="caption">List</span-->
+                    </button>
+                    <button class="ribbon-icon-button bg-blue fg-white change-view" title="Content" data-view="content">
+                        <span class="icon">
+                            <span class="mif-apps"></span>
+                        </span>
+                        <!--span class="caption">Content</span-->
+                    </button>
+                    <button class="ribbon-icon-button bg-blue fg-white change-view bg-orange" title="Icons"
+                        data-view="icons">
+                        <span class="icon">
+                            <span class="mif-table"></span>
+                        </span>
+                        <!--span class="caption">Icons</span-->
+                    </button>
+                    <button class="ribbon-icon-button bg-blue fg-white change-view" title="Small Icons"
+                        data-view="icons-medium">
+                        <span class="icon">
+                            <span class="mif-image"></span>
+                        </span>
+                        <!--span class="caption">Small icons</span-->
+                    </button>
+                    <button class="ribbon-icon-button bg-blue fg-white change-view" title="Large Icons"
+                        data-view="icons-large">
+                        <span class="icon">
+                            <span class="mif-images"></span>
+                        </span>
+                        <!--span class="caption">Large icons</span-->
+                    </button>
+                    <button class="ribbon-icon-button bg-blue fg-white change-view" title="Tiles" data-view="tiles">
+                        <span class="icon">
+                            <span class="mif-windows"></span>
+                        </span>
+                        <!--span class="caption">Tiles</span-->
+                    </button>
+                </div>
+            </div>
+            <div class="file-explorer">
+                <!--div class="app-bar pos-absolute bg-blue z-1" data-role="appbar">
+                    <button class="app-bar-item c-pointer" id="sidebar-toggle-3">
+                        <span class="mif-menu fg-white"></span>
+                    </button>
+                    <button class="ribbon-icon-button bg-blue fg-white" id="btnrightctrl"
+                        style="right: 5px;position: fixed;">
+                        <span class="icon">
+                            <span class="mif-list"></span>
+                        </span>                        
+                    </button>
+                </div-->
+                <nav data-role="ribbonmenu">
+                    <ul class="tabs-holder">
+                        <li class="static" id="sidebar-toggle-3"><a href="#">
+                                File
+                            </a></li>
+                        <li class="active"><a href="#section-group">View</a></li>
+                    </ul>
+
+                    <div class="content-holder">
+                        <div class="section" id="section-group">
+                            <!--div class="group">
+
+                                <div data-role="buttonsGroup" data-cls-active="active">
+                                    <button class="ribbon-button">
+                                        <span class="icon">
+                                            <span class="mif-vertical-align-top"></span>
+                                        </span>
+                                        <span class="caption">Top</span>
+                                    </button>
+                                    <button class="ribbon-button">
+                                        <span class="icon">
+                                            <span class="mif-vertical-align-center"></span>
+                                        </span>
+                                        <span class="caption">Center</span>
+                                    </button>
+                                    <button class="ribbon-button">
+                                        <span class="icon">
+                                            <span class="mif-vertical-align-bottom"></span>
+                                        </span>
+                                        <span class="caption">Bottom</span>
+                                    </button>
+                                </div>
+
+                                <span class="title">Role group</span>
+                            </div-->
+
+                            <div class="group">
+                                <div class="ribbon-toggle-group">
+                                    <button class="ribbon-icon-button change-view" data-view="list">
+                                        <span class="icon">
+                                            <span class="mif-list"></span>
+                                        </span>
+                                        <span class="caption">List</span>
+                                    </button>
+
+                                    <button class="ribbon-icon-button change-view" data-view="content">
+                                        <span class="icon">
+                                            <span class="mif-apps"></span>
+                                        </span>
+                                        <span class="caption">Content</span>
+                                    </button>
+
+                                    <button class="ribbon-icon-button change-view" data-view="icons">
+                                        <span class="icon">
+                                            <span class="mif-table"></span>
+                                        </span>
+                                        <span class="caption">Icons</span>
+                                    </button>
+
+                                    <button class="ribbon-icon-button change-view" data-view="icons-small">
+                                        <span class="icon">
+                                            <span class="mif-image"></span>
+                                        </span>
+                                        <span class="caption">Small icons</span>
+                                    </button>
+
+                                    <button class="ribbon-icon-button change-view" data-view="icons-large">
+                                        <span class="icon">
+                                            <span class="mif-images"></span>
+                                        </span>
+                                        <span class="caption">Large icons</span>
+                                    </button>
+
+                                    <button class="ribbon-icon-button change-view" data-view="tiles">
+                                        <span class="icon">
+                                            <span class="mif-windows"></span>
+                                        </span>
+                                        <span class="caption">Tiles</span>
+                                    </button>
+                                </div>
+                                <span class="title">Layout</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </nav>
+                <div class="d-flex bg-white border bd-gray flex-content-start">
+                    <div class="border border-right-none border-left-none border-top-none  border-bottom-none bd-gray"
+                        style="padding-left: 10px;padding-right: 10px;">
+                        <a href="#" id="windowBack" class="fg-gray">
+                            <span class="icon">
+                                <span class="mif-arrow-left"></span>
+                            </span>
+                        </a>
+                        &nbsp;
+                        <a href="#" id="windowNxt" class="fg-gray">
+                            <span class="icon">
+                                <span class="mif-arrow-right"></span>
+                            </span>
+                        </a>
+                    </div>
+                    &nbsp;
+                    <div class="border border-right-none border-left border-top-none  border-bottom-none bd-gray">
+                        &nbsp;<i class="fa fa-folder fg-darkyellow"></i>&nbsp;
+                        <small id="windowPath"></small>
+                    </div>
+                </div>
+                <ul data-role="listview" data-view="tiles" id="dirlist" style="margin-left: 15px;margin-top: 15px;"
+                    data-structure='{"cdate": true, "size": true}'>
+                    <li class="h5">Please select a drive</li>
+                </ul>
+            </div>
+            <a id="fdownload"></a>
+        </div>
+        <!--div data-role="charms" id="taskbar" class="bg-dark" data-position="bottom">
+        <a href="#" role="dropdown-toggle"><span style="margin-top: 8px;" class="fa fa-folder fa-2x fg-white"></span></a>
+        <a href="#" role="dropdown-toggle"><span style="margin-top: 8px;" class="fa fa-envelope fa-2x fg-white"></span></a>
+    </div-->
+
+        <div class="menu" id="filemenu">
+            <div class="menu-item fopen"><i class="fa fa-folder-open"></i>&nbsp;Open</div>
+            <div class="menu-item fdownload"><i class="fa fa-download"></i>&nbsp;Download</div>
+            <hr>
+            <div class="menu-item fview"><i class="fa fa-eye"></i>&nbsp;View
+            </div>
+            <div class="menu-item frename"><i class="fa fa-edit"></i>&nbsp;Rename</div>
+            <hr>
+            <div class="menu-item fdelete"><i class="fa fa-remove"></i>&nbsp;Delete</div>
+        </div>
+    </div>
+    <style>
+        .taskbar {
+            background: #1d1b1b;
+            height: 50px;
+        }
+
+        .taskbar a {
+            padding: 5px;
+            margin: 10px;
+        }
+
+        .taskbar a .icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            line-height: 50px;
+            margin-left: 5px;
+            color: #ffffff;
+        }
+
+        .sidebar-header~.sidebar-menu {
+            height: auto !important;
+        }
+
+        #dirlist {
+            max-height: 700px;
+            overflow: auto;
+        }
+
+        .listview.view-content .node {
+            width: auto;
+        }
+
+        .change-view {
+            margin-top: 5px;
+        }
+
+        .menu {
+            width: 200px;
+            box-shadow: 3px 3px 5px #888888;
+            border-style: solid;
+            border-width: 1px;
+            border-color: grey;
+            border-radius: 2px;
+            padding-left: 5px;
+            padding-right: 5px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            position: fixed;
+            display: none;
+            background-color: #ffffff;
+        }
+
+        .menu-item {
+            height: 40px;
+            padding: 5px;
+        }
+
+        .menu-item:hover {
+            background-color: #6CB5FF;
+            cursor: pointer;
+        }
+    </style>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="socket.io-file-client.js"></script>
+    <script src="socket.io-stream.js"></script>
+    <script src="js/client.js"></script>
+    <script>
+        $(function () {
+            //$('#taskbar').data('charms').open();
+            $('.change-view').click(function () {
+                var __view = $(this).attr('data-view');
+                $('.change-view').removeClass('bg-orange');
+                $(this).addClass('bg-orange');
+                $("#dirlist").data("listview").view(__view);
+            });
+            $('#btnrightctrl').click(function () {
+                $('#rightctrl').data('charms').open();
+            });
+            $('.close-charm').click(function () {
+                $('#rightctrl').data('charms').close();
+            });
+        });
+    </script>
+</body>
+
+</html>
