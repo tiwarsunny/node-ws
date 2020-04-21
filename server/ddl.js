@@ -71,15 +71,6 @@ exports.listDrives = function () {
             } else {
                 reject(err)
             }
-
-
-            /*
-            RESULT:
-              [{
-                Caption: 'Microsoft Windows Server 2008 R2 Enterprise',
-                Version: '6.1.7601'
-              }]
-            */
         });
 
 

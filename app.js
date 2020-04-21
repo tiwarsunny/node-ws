@@ -12,7 +12,7 @@ var uploader;
 //var __ld = require('./server/dmount');
 //var __ad = require('./server/dlist');
 var __ddl = require('./server/ddl');
-const __root = path.join(__dirname, 'webroot\\');
+const __root = path.join(__dirname, 'webroot');
 app.use(express.static(path.join(__dirname, 'webroot')));
 
 app.get('/', function (req, res) {
