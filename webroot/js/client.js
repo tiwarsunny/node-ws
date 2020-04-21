@@ -105,7 +105,7 @@ function __fetch(__curDir, __resetForward) {
     }
     //console.log(__dirIndex, __pathArr);
     $('#windowPath').empty();
-    console.log(__pathArr);
+    //console.log(__pathArr);
     $.each(__pathArr[__dirIndex].split('\\'), function (x, v) {
         if (v && v !== '') {
             var __link = $('<a>', {
@@ -127,7 +127,7 @@ function __fetch(__curDir, __resetForward) {
     __io.emit("fetch", __curDir);
 }
 
-function __showInfo(data, sender) {
+function __showInfo(data, sender, inplace) {
     var __html = "Name : " + data.filename;
     __html += '<br>Type : ' + (data.type === 'd' ?
         'File Folder' :
@@ -135,7 +135,8 @@ function __showInfo(data, sender) {
     __html += '<br>Size : ' + (data.type === 'd' ?
         0 :
         bytesToSize(data.size));
-    $('#fDetails').html(__html);
+    if (inplace)
+        $('#fDetails').html(__html);
     $(sender).attr('title', __html.split('<br>').join('\n'));
 }
 var bigblob = new Blob();
@@ -236,7 +237,7 @@ function __createDirectoryView(data) {
         var __pNode = __dexplorer
             .data("listview")
             .add(null, {
-                caption: (v.VolumeName || v.Description.replace('Fixed','')) + ' (' + v.Caption + ')',
+                caption: (v.VolumeName || v.Description.replace('Fixed', '')) + ' (' + v.Caption + ')',
                 icon: "<span class='mif-drive fg-orange'>",
                 content: "<div class='mt-1' data-role='progress' data-value='" + __percentFull + "' data-small='false'>"
             });
@@ -282,6 +283,9 @@ function __createFileView(d) {
             __nodeadd[0].ondblclick = function () {
                 getFile(v);
             }
+        }
+        __nodeadd[0].onclick = function () {
+            __showInfo(v, this, true);
         }
         __nodeadd[0].onmouseover = function () {
             __showInfo(v, this);
